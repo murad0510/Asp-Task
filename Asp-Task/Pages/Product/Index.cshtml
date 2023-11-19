@@ -1,0 +1,46 @@
+﻿@page
+@model Asp_Task.Pages.Product.IndexModel
+@{
+}
+
+<body>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</body>
+
+<head>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">#</th>
+                <th scope="col">#</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Products)
+            {
+                <tr>
+                    <td scope="row">@item.Id</td>
+                    <td scope="row">@item.Name</td>
+                    <td scope="row">@item.Price</td>
+                    <td scope="row">
+                        <a class="btn btn-outline-primary" asp-page="/Product/EditProduct" asp-route-ProductId="@item.Id">Edit</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-danger" asp-page="/Product/DeleteProduct" asp-route-ProductId="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <a asp-page="/Product/AddProduct">
+        <button class="btn btn-success">
+            Add New Product
+        </button>
+    </a>
+</head>

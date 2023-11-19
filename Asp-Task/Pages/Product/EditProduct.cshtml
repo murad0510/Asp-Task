@@ -1,0 +1,26 @@
+﻿@page
+@model Asp_Task.Pages.Product.EditProductModel
+@{
+}
+
+<body>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</body>
+<head>
+    <form class="col-5" method="post">
+        <div class="mb-3" style="display: none;">
+            <label class="form-label">Product Id</label>
+            <input asp-for="Product.Id" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Product Name</label>
+            <input asp-for="Product.Name" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Product Price</label>
+            <input asp-for="Product.Price" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Edit Product</button>
+    </form>
+</head>
